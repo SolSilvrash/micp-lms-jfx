@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1050.0" styleClass="main-body" stylesheets="@../css/theme.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.local.UI.controller.LoginController">
+   <children>
+      <BorderPane layoutX="418.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="container" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="690.0" fitWidth="1040.0" layoutX="420.0" layoutY="270.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../../../../resources/_background.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center>
+         <effect>
+            <DropShadow />
+         </effect></BorderPane>
+   </children>
+</AnchorPane>
