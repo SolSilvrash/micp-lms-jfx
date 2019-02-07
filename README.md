@@ -1,8 +1,6 @@
 # MICP LMS (Learning Module System)
 
-<img src="src/resources/_logo.png" height="100"/>
-<br/>
-<img src="src/resources/_javafx.png" height="100"/>
+<img src="src/resources/_logo.png" height="100"/> <img src="src/resources/_javafx.png" height="100"/>
 
 #### MIC P Learning Module System (JavaFX port)
 Below are some list of features to be implemented in the system:
