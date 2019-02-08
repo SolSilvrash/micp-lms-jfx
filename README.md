@@ -8,6 +8,12 @@ Below are some list of features to be implemented in the system:
 + Management of student's attendance and activities.
 + to be concluded
 
+### Current Status
+
+#### Login Page
+<img src="src/documentation/login-page.png" height="150"/> <img src="src/resources/_javafx.png" height="100"/>
+
+_TODO : applying server-side functions with test data in login page_
 
 [ __[Click here to edit more](https://dillinger.io/)__ ]
 
