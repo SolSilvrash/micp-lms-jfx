@@ -11,7 +11,7 @@ Below are some list of features to be implemented in the system:
 ### Current Status
 
 #### Login Page
-<img src="src/documentation/login-page.jpg" height="300"/> 
+<img src="src/documentation/login-page.JPG" height="400"/> 
 
 _TODO : applying server-side functions with test data in login page_
 
