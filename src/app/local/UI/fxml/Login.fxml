@@ -1,27 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1050.0" styleClass="main-body" stylesheets="@../css/theme.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.local.UI.controller.LoginController">
-   <children>
-      <BorderPane layoutX="418.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="container" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="690.0" fitWidth="1040.0" layoutX="420.0" layoutY="270.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../resources/_background.png" />
-                     </image>
-                  </ImageView>
-               </children>
+<AnchorPane prefHeight="700.0" prefWidth="1050.0" styleClass="main-body" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.local.UI.controller.LoginController">
+   <stylesheets>
+      <URL value="@../css/theme.css" />
+      <URL value="@../css/login.css" />
+   </stylesheets>
+   <BorderPane layoutX="418.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <center>
+         <AnchorPane prefHeight="690.0" prefWidth="1016.0" styleClass="container" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="690.0" fitWidth="1040.0" layoutX="420.0" layoutY="270.0" opacity="0.5" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-18.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <GaussianBlur />
+               </effect>
+               <Image url="@../../../../resources/_background.png" />
+            </ImageView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="div-container" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <ImageView fitHeight="191.0" fitWidth="191.0" layoutX="49.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="762.0">
+                  <Image url="@../../../../resources/_logo.png" />
+               </ImageView>
+               <Label layoutX="254.0" layoutY="192.0" prefHeight="71.0" prefWidth="258.0" text="MICP on ICT" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="254.0" AnchorPane.rightAnchor="488.0">
+                  <font>
+                     <Font size="46.0" />
+                  </font>
+                  <effect>
+                     <DropShadow height="18.03" radius="12.2225" spread="0.14" width="32.86" />
+                  </effect>
+               </Label>
+               <Label layoutX="172.0" layoutY="256.0" prefHeight="46.0" prefWidth="340.0" text="Learning Module System" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="488.0">
+                  <font>
+                     <Font size="31.0" />
+                  </font>
+                  <effect>
+                     <DropShadow height="18.03" radius="12.2225" spread="0.14" width="32.86" />
+                  </effect>
+               </Label>
+               <AnchorPane layoutX="20.0" layoutY="325.0" prefHeight="314.0" prefWidth="531.0" styleClass="form-container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="451.0">
+                  <AnchorPane layoutX="26.0" layoutY="21.0" prefHeight="258.0" prefWidth="496.0" styleClass="form-group">
+                     <ImageView fitHeight="258.0" fitWidth="505.0" layoutX="-8.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Image url="@../../../../resources/_crystalline.png" />
+                     </ImageView>
+                     <AnchorPane layoutX="39.0" layoutY="74.0" prefHeight="176.0" prefWidth="424.0" styleClass="form-container">
+                        <JFXTextField fx:id="userTF" layoutX="42.0" layoutY="14.0" prefHeight="39.0" prefWidth="319.0" promptText="Enter Account ID" styleClass="form-input" unFocusColor="BLACK">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="passPF" layoutX="41.0" layoutY="66.0" prefHeight="39.0" prefWidth="320.0" promptText="Enter Keycode" styleClass="form-input" unFocusColor="BLACK">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="13.0" layoutY="48.0" size="20" stroke="#3c3c3c" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="KEY" layoutX="17.0" layoutY="96.0" size="20" stroke="#404040" text="" />
+                        <JFXButton fx:id="loginBtn" buttonType="RAISED" defaultButton="true" layoutX="311.0" layoutY="137.0" onAction="#handleLogin" prefHeight="27.0" prefWidth="106.0" text="Submit">
+                           <styleClass>
+                              <String fx:value="form-btn" />
+                              <String fx:value="form-btn-success" />
+                           </styleClass>
+                        </JFXButton>
+                     </AnchorPane>
+                     <Label layoutX="89.0" layoutY="18.0" text="Authentication" textFill="#494848">
+                        <font>
+                           <Font size="28.0" />
+                        </font>
+                     </Label>
+                     <FontAwesomeIconView fill="#434343" glyphName="SHIELD" layoutX="43.0" layoutY="54.0" size="40" />
+                     <JFXButton fx:id="requestBtn" layoutX="8.0" layoutY="227.0" onAction="#handleRequest" styleClass="form-link" text=" Request Access from Administrator">
+                        <graphic>
+                           <FontAwesomeIconView fill="#576ccb" glyphName="LOCATION_ARROW" size="16" />
+                        </graphic>
+                     </JFXButton>
+                  </AnchorPane>
+               </AnchorPane>
+               <AnchorPane layoutX="572.0" layoutY="54.0" prefHeight="572.0" prefWidth="368.0" styleClass="note-container">
+                  <AnchorPane layoutX="19.0" layoutY="8.0" prefHeight="36.0" prefWidth="396.0" styleClass="window-control">
+                     <Label layoutX="14.0" layoutY="4.0" text=" Is this your first time here?" textFill="WHITE">
+                        <graphic>
+                           <FontAwesomeIconView fill="WHITE" glyphName="LIGHTBULB_ALT" size="25" />
+                        </graphic>
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                  </AnchorPane>
+                  <AnchorPane layoutX="21.0" layoutY="59.0" prefHeight="193.0" prefWidth="386.0" styleClass="form-group">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <Label layoutX="17.0" layoutY="14.0" prefHeight="81.0" prefWidth="352.0" text="• If you haven't recieved your account ID and keycode yet, &#10;click the &quot;REQUEST ACCESS FROM ADMINISTRATOR&quot; link &#10;at the lower part of the authentication form in the main &#10;page.&#10;&#10;" textAlignment="JUSTIFY">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="17.0" layoutY="85.0" prefHeight="126.0" prefWidth="352.0" text="• A form will popup and you will be prompted to fill up the&#10;necessary information needed by the system. After proper &#10;validation, you will recieve a message from the administrator &#10;about your credentials needed to log in to the system." textAlignment="JUSTIFY">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </AnchorPane>
+                  <AnchorPane layoutX="19.0" layoutY="296.0" prefHeight="36.0" prefWidth="396.0" styleClass="window-control">
+                     <Label layoutX="14.0" layoutY="4.0" text=" Features " textFill="WHITE">
+                        <graphic>
+                           <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" size="23" />
+                        </graphic>
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                  </AnchorPane>
+                  <AnchorPane layoutX="22.0" layoutY="347.0" prefHeight="193.0" prefWidth="386.0" styleClass="form-group">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <Label layoutX="17.0" layoutY="14.0" prefHeight="31.0" prefWidth="352.0" text="•   Secure authentication and management of accounts.&#10;" textAlignment="JUSTIFY">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="17.0" layoutY="45.0" prefHeight="31.0" prefWidth="352.0" text="•   Ease of managing lessons and curriculum for MIC P.&#10;" textAlignment="JUSTIFY">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="17.0" layoutY="81.0" prefHeight="31.0" prefWidth="352.0" text="•   Quizzes and exercises are conducted here.&#10;" textAlignment="JUSTIFY">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="17.0" layoutY="118.0" prefHeight="43.0" prefWidth="352.0" text="•  Huge repository of books and resources in terms of&#10;Computer Science and related literatures.&#10;" textAlignment="JUSTIFY">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </AnchorPane>
+               </AnchorPane>
             </AnchorPane>
-         </center>
-         <effect>
-            <DropShadow />
-         </effect></BorderPane>
-   </children>
+            <AnchorPane layoutX="445.0" layoutY="-2.0" minHeight="-Infinity" onMouseDragged="#handleDragWindow" onMousePressed="#handlePressWindow" prefHeight="33.0" prefWidth="595.0" styleClass="window-control">
+               <ImageView fitHeight="34.0" fitWidth="597.0" pickOnBounds="true">
+                  <Image url="@../../../../resources/_crystalline.png" />
+               </ImageView>
+               <Label layoutX="14.0" layoutY="8.0" prefHeight="17.0" prefWidth="110.0" text="MIC P - LMS " textFill="#fffbfb" />
+               <JFXButton layoutX="573.0" layoutY="8.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleExit" prefHeight="10.0" prefWidth="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="11.0">
+                  <styleClass>
+                     <String fx:value="control-btn" />
+                     <String fx:value="control-btn-exit" />
+                  </styleClass>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+                  <effect>
+                     <ColorAdjust />
+                  </effect>
+               </JFXButton>
+               <JFXButton layoutX="585.0" layoutY="21.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleMin" prefHeight="10.0" prefWidth="10.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="11.0">
+                  <styleClass>
+                     <String fx:value="control-btn" />
+                     <String fx:value="control-btn-min" />
+                  </styleClass>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+                  <effect>
+                     <ColorAdjust />
+                  </effect>
+               </JFXButton>
+            </AnchorPane>
+         </AnchorPane>
+      </center>
+      <effect>
+         <DropShadow color="#00000091" />
+      </effect>
+      <top>
+         <JFXProgressBar fx:id="loginPB" prefHeight="0.0" prefWidth="1061.0" progress="0.8" styleClass="pb" visible="false" BorderPane.alignment="CENTER" />
+      </top>
+   </BorderPane>
 </AnchorPane>

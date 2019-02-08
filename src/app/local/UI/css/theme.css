@@ -3,5 +3,78 @@
 }
 
 .container{
-    -fx-background-color: white;
+    -fx-background-color: #fff6f8;
+}
+
+.div-container {
+    -fx-background-color: rgba(63, 102, 118, 0.14);
+}
+
+.window-control{
+    -fx-background-color: rgb(0, 16, 53);
+}
+
+.form-input{
+    -fx-padding: 5;
+}
+
+/* ===================== progress bar ==================== */
+
+.pb > .track {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+}
+
+.pb > .bar {
+    -fx-background-color: rgb(132, 104, 255);
+}
+
+/* ====================== NOTES ====================== */
+
+.warning-note{
+    -fx-background-color: rgba(255, 253, 124, 0.58);
+    -fx-background-radius: 5;
+    -fx-border-color: #b7b567;
+    -fx-border-radius: 5;
+}
+
+.warning-note>.label{
+    -fx-text-fill: #ff7300;
+}
+
+.primary-note{
+
+}
+
+/* control buttons */
+
+.control-btn {
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+.control-btn-exit{
+    -fx-background-color: linear-gradient(#fd0c03, #ffa99a);
+}
+
+.control-btn-min{
+    -fx-background-color: linear-gradient(#9a9800, #e9f70b);
+}
+
+/* form buttons */
+
+.form-btn {
+    -fx-cursor: hand;
+}
+
+.form-btn-success {
+    -fx-background-color: #006200;
+    -fx-text-fill: white;
+}
+
+.form-link{
+    -fx-cursor: hand;
+    -fx-text-fill: #3c14cb;
 }

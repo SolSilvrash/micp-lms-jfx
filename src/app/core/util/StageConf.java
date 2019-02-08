@@ -1,4 +1,4 @@
-package app.core.config;
+package app.core.util;
 
 import javafx.scene.image.Image;
 import javafx.stage.Stage;

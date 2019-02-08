@@ -1,0 +1,13 @@
+.form-container{
+    -fx-border-color: rgba(0, 0, 0, 0.47) transparent transparent transparent;
+}
+
+.form-group {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.58), 10, 0, 4, 4);
+}
+
+.note-container{
+    -fx-border-color: transparent transparent transparent rgba(0, 0, 0, 0.17);
+    -fx-border-width: 5;
+}

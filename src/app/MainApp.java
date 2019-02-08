@@ -1,6 +1,6 @@
 package app;
 
-import app.core.config.StageConf;
+import app.core.util.StageConf;
 import app.local.UI.controller.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -35,21 +35,24 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("local/UI/fxml/Login.fxml"));
 
-            loginRoot = (AnchorPane) loader.load();
+            loginRoot = loader.load();
             Scene scene = new Scene(loginRoot);
             scene.setFill(Color.TRANSPARENT);
-            scene.getStylesheets().add("local/UI/css/theme.css");
 
             loginStage.setScene(scene);
 
             LoginController controller = loader.getController();
             controller.setMainApp(this);
-//            controller.getUserTextField().requestFocus();
+            controller.getUserTextField().requestFocus();
 
             loginStage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Stage getLoginStage(){
+        return loginStage;
     }
 }
