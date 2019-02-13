@@ -15,6 +15,12 @@ public class Account {
         account_type = new SimpleStringProperty();
     }
 
+    public Account (String account_id, String account_type){
+        this.account_id = new SimpleStringProperty(account_id);
+        password = new SimpleStringProperty();
+        this.account_type = new SimpleStringProperty(account_type);
+    }
+
     public String getAccount_id() {
         return account_id.get();
     }

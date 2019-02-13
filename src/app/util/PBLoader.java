@@ -1,4 +1,4 @@
-package app.core.util;
+package app.util;
 
 import com.jfoenix.controls.JFXProgressBar;
 import javafx.animation.KeyFrame;

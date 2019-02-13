@@ -1,6 +1,8 @@
 package app;
 
-import app.core.util.StageConf;
+import app.local.obj.Account;
+import app.util.Page;
+import app.util.config.StageConf;
 import app.local.UI.controller.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,13 +22,15 @@ public class MainApp extends Application {
     private Stage loginStage;
     @SuppressWarnings("FieldCanBeLocal")
     private AnchorPane loginRoot;
+    private Account user;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage){
 
         loginStage = primaryStage;
         StageConf.setProperties(loginStage);
         initLogin();
+        Page.rootStage = loginStage;
     }
 
     private void initLogin(){
@@ -54,5 +58,9 @@ public class MainApp extends Application {
 
     public Stage getLoginStage(){
         return loginStage;
+    }
+
+    public void setUser(Account user){
+        this.user = user;
     }
 }

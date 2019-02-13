@@ -3,8 +3,9 @@ package app.local.obj;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Student extends Account{
+public class Student{
 
+    private final StringProperty account_id;
     private final StringProperty fname;
     private final StringProperty mname;
     private final StringProperty lname;
@@ -13,6 +14,7 @@ public class Student extends Account{
     private final StringProperty contact;
 
     public Student(){
+        account_id = new SimpleStringProperty();
         fname = new SimpleStringProperty();
         mname = new SimpleStringProperty("");
         lname = new SimpleStringProperty();
@@ -91,5 +93,17 @@ public class Student extends Account{
 
     public void setContact(String contact) {
         this.contact.set(contact);
+    }
+
+    public void setAccount_id(String account_id){
+        this.account_id.set(account_id);
+    }
+
+    public String getAccount_id() {
+        return account_id.get();
+    }
+
+    public StringProperty account_idProperty() {
+        return account_id;
     }
 }
