@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1050.0" styleClass="main-body" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.local.UI.controller.SplashController">
+    <BorderPane layoutX="418.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <center>
+         <AnchorPane styleClass="container" BorderPane.alignment="CENTER">
+               <ImageView fitHeight="690.0" fitWidth="1040.0" pickOnBounds="true">
+                     <Image url="@../../../../resources/_background.png" />
+               </ImageView>
+               <ImageView fitHeight="244.0" fitWidth="244.0" layoutX="21.0" layoutY="189.0" opacity="0.84" pickOnBounds="true" preserveRatio="true">
+                     <Image url="@../../../../resources/_logo.png" />
+               </ImageView>
+               <JFXProgressBar fx:id="progress" layoutX="21.0" layoutY="450.0" prefHeight="6.0" prefWidth="1004.0" progress="1.0" styleClass="pb" />
+               <Label fx:id="status" layoutX="265.0" layoutY="386.0" text="Granting Access">
+                  <font>
+                     <Font size="39.0" />
+                  </font>
+               </Label>
+               <Label fx:id="userLbl" layoutX="21.0" layoutY="456.0" text="User: Admin">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Label>
+            <effect>
+               <DropShadow />
+            </effect>
+         </AnchorPane>
+      </center></BorderPane>
+   <stylesheets>
+      <URL value="@../css/theme.css" />
+      <URL value="@../css/login.css" />
+   </stylesheets>
+</AnchorPane>

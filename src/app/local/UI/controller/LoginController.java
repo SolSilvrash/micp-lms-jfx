@@ -21,8 +21,6 @@ public class LoginController {
     private double xOffset;
     private double yOffset;
     @SuppressWarnings("FieldCanBeLocal")
-    private Account user;
-    @SuppressWarnings("FieldCanBeLocal")
     private boolean isValid;
 
     public void setMainApp(MainApp mainApp){
@@ -133,7 +131,7 @@ public class LoginController {
 
         try {
 
-            user = Login.login(userTF.getText(), passPF.getText());
+            Account user = Login.login(userTF.getText(), passPF.getText());
             isValid = Login.isAccountValid();
 
             if(isValid){
@@ -141,7 +139,7 @@ public class LoginController {
                 System.out.println("Login Established ...");
                 System.out.println("Account_UserType : " + user.getAccount_type());
                 mainApp.setUser(user);
-                System.exit(0);
+                mainApp.loadSplash();
 
             } else {
                 restoreFieldStatus();
