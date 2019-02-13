@@ -1,13 +1,18 @@
 package app.local.UI.controller;
 
 import app.MainApp;
-import app.core.util.PBLoader;
+import app.local.obj.Account;
+import app.local.server.Login;
+import app.util.PBLoader;
+import app.util.Page;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 
 
 public class LoginController {
@@ -15,6 +20,10 @@ public class LoginController {
     private MainApp mainApp;
     private double xOffset;
     private double yOffset;
+    @SuppressWarnings("FieldCanBeLocal")
+    private Account user;
+    @SuppressWarnings("FieldCanBeLocal")
+    private boolean isValid;
 
     public void setMainApp(MainApp mainApp){
         this.mainApp = mainApp;
@@ -65,13 +74,16 @@ public class LoginController {
 
         PBLoader.load(
                 () -> {
-                    System.out.println("logging in and authenticating ...");
+                    try {
+                        loginAction();
+                    } catch (NoSuchAlgorithmException | SQLException | ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     restoreFieldStatus();
                 },
                 loginPB,
                 1
         );
-
     }
 
     @FXML
@@ -87,7 +99,6 @@ public class LoginController {
                 loginPB,
                 1
         );
-
     }
 
     @FXML
@@ -115,4 +126,46 @@ public class LoginController {
         loginBtn.setDisable(false);
         requestBtn.setDisable(false);
     }
+
+    private void loginAction() throws NoSuchAlgorithmException, SQLException, ClassNotFoundException {
+
+        System.out.println("Login initializing ... ");
+
+        try {
+
+            user = Login.login(userTF.getText(), passPF.getText());
+            isValid = Login.isAccountValid();
+
+            if(isValid){
+
+                System.out.println("Login Established ...");
+                System.out.println("Account_UserType : " + user.getAccount_type());
+                mainApp.setUser(user);
+                System.exit(0);
+
+            } else {
+                restoreFieldStatus();
+                System.out.println(Page.errCode);
+                Page.errCode = 3;
+                if(Page.errCode == 3){
+                    Page.error(
+                            "LOGIN FAILED",
+                            "Account Lookup Failed",
+                            "No Such Account is found in our database. Please contact the administrator for " +
+                                    "your credentials.\n" +
+                                    "Check if your password is correct."
+                    );
+                }
+                System.out.println("Error Logging in to Application...");
+            }
+
+        } catch (NoSuchAlgorithmException | SQLException | ClassNotFoundException e) {
+            restoreFieldStatus();
+            System.out.println("An error occurred in the system. Error: " + e);
+            throw e;
+        }
+
+    }
+
+
 }
