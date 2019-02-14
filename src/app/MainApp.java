@@ -1,5 +1,6 @@
 package app;
 
+import app.local.UI.controller.RequestController;
 import app.local.UI.controller.SplashController;
 import app.local.obj.Account;
 import app.util.Page;
@@ -9,11 +10,11 @@ import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 
 public class MainApp extends Application {
@@ -23,19 +24,18 @@ public class MainApp extends Application {
     }
 
     private Stage loginStage;
-    @SuppressWarnings("FieldCanBeLocal")
     private AnchorPane loginRoot;
     private Account user;
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 
         loginStage = primaryStage;
         StageConf.setProperties(loginStage);
         initLogin();
         Page.rootStage = loginStage;
     }
-
+// ================================================= Login =================================================
     private void initLogin(){
 
         try {
@@ -66,7 +66,7 @@ public class MainApp extends Application {
     public void setUser(Account user){
         this.user = user;
     }
-
+// ================================================= Splash =================================================
     public void loadSplash(){
 
         try {
@@ -93,34 +93,41 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+// ================================================= Request =================================================
+    public void loadRequest(){
 
+        FXMLLoader requestFXML;
+
+        loginRoot.setEffect(new GaussianBlur(3));
+        Page.rootStage = loginStage;
+
+        requestFXML = Page.modal(
+                "local/UI/fxml/Request.fxml"
+        );
+
+        if (requestFXML != null) {
+            RequestController controller = requestFXML.getController();
+            controller.setStage(Page.dialogStage);
+            controller.setMainApp(this);
+        } else {
+            System.out.println("Alert: Request FXML is null.");
+        }
+
+    }
+
+// ================================================= Main Interface =================================================
     public void initMainInterface(){
 
         switch(user.getAccount_type()){
             case "0" :
                 System.out.println("Account Type : Accounts Access Administrator");
-                init_super();
                 break;
             case "1":
                 System.out.println("Account Type: Administrator");
-                init_admin();
                 break;
             default:
-                init_student();
                 System.out.println("Account Type: Student");
                 break;
         }
-    }
-
-    private void init_super(){
-
-    }
-
-    private void init_admin(){
-
-    }
-
-    private void init_student(){
-
     }
 }

@@ -42,7 +42,7 @@ public class SplashController {
                     System.exit(0);
                 },
                 progress,
-                8
+                6
         );
     }
 
@@ -57,7 +57,7 @@ public class SplashController {
                         }
                 ),
                 new KeyFrame(
-                        Duration.millis(1000)
+                        Duration.millis(500)
                 )
         );
 

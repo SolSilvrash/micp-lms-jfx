@@ -2,9 +2,14 @@
   <dictionary name="MicP">
     <words>
       <w>dropshadow</w>
+      <w>extname</w>
+      <w>fname</w>
+      <w>lname</w>
       <w>micp</w>
+      <w>mname</w>
       <w>retyopre</w>
       <w>silvrash</w>
+      <w>xname</w>
     </words>
   </dictionary>
 </component>

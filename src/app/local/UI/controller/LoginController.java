@@ -92,6 +92,7 @@ public class LoginController {
         PBLoader.load(
                 () -> {
                     System.out.println("initiating request ...");
+                    mainApp.loadRequest();
                     restoreFieldStatus();
                 },
                 loginPB,
@@ -164,6 +165,5 @@ public class LoginController {
         }
 
     }
-
 
 }

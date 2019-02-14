@@ -16,7 +16,10 @@ Below are some list of features to be implemented in the system:
 #### Splash Page
 <img src="src/documentation/splash-page.JPG" height="400"/>
 
-_TODO : applying server-side functions with test data in login page_
+#### Request Access
+<img src="src/documentation/request-page.JPG" height="400"/>
+
+_TODO : Main Interface of the system_
 
 [ __[Click here to edit more](https://dillinger.io/)__ ]
 

@@ -5,9 +5,9 @@ import javafx.beans.property.StringProperty;
 
 public class Account {
 
-    private final StringProperty account_id;
-    private final StringProperty password;
-    private final StringProperty account_type;
+    private StringProperty account_id;
+    private StringProperty password;
+    private StringProperty account_type;
 
     public Account(){
         account_id = new SimpleStringProperty();

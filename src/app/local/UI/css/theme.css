@@ -30,6 +30,12 @@
     -fx-background-color: rgb(61, 24, 255);
 }
 
+/*=================== prompt text =======================*/
+
+.text-field, .text-area, .password-field{
+    -fx-prompt-text-fill: #918e8f;
+}
+
 /* ====================== NOTES ====================== */
 
 .warning-note{
